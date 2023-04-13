@@ -33,15 +33,17 @@ module.exports = () => {
         short_name: "J.A.T.E.",
         description: "Takes notes with JavaScript syntax highlighting!",
         start_url: '/',
+        publicPath: '/',
         theme_color: '#225ca3',
         background_color: '#225ca3',
         orientation: 'portrait',
         display: 'standalone',
+        fingerprints: false,
         icons: [
           {
             src: path.resolve('src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
-            destination:path.join('assets'),
+            destination:path.join('assets', 'icons'),
           },
         ],
       }),
@@ -52,6 +54,10 @@ module.exports = () => {
         {
           test: /\.css$/i,
           use: ['style-loader', 'css-loader'],
+        },
+        {
+          test: /\.(png|svg|jpg|jpeg|gif)$/i,
+          type: 'asset/resource',
         },
         {
           test: /\.m?js$/,
