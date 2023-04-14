@@ -17,7 +17,7 @@ export const putDb = async (content) => {
   const jateDB = await openDB('jate', 1);
   const tx = jateDB.transaction('jate', 'readwrite');
   const store = tx.objectStore('jate');
-  const request = store.put({jate: content});
+  const request = store.put({ jate: content, id: 1 });
   const result = await request;
   console.log('Data saved to the database!');
 }
@@ -27,9 +27,9 @@ export const getDb = async () => {
   const jateDB = await openDB('jate', 1);
   const tx = jateDB.transaction('jate', 'readonly');
   const store = tx.objectStore('jate');
-  const request = store.getAll();
+  const request = store.get(1);
   const result = await request;
-  console.log('Result of Get All:', result);
+  console.log('Result of get:', result);
   return result;
 };
 
