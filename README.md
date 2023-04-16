@@ -71,7 +71,7 @@ Node packages used:
   - concurrently
 
 -*Custom scripts included in the package.json file for the main directory and the code used for the asset-caching in src-sw.js are borrowed from course activities*<br>
--*Event listener functions for the install.js file follow the guides included in the very helpful articles [How to provide your own in-app install experience](https://web.dev/customize-install/) and [Make it installable](https://web.dev/codelab-make-installable/).*
+-*Event listener functions for the install.js file follow the guides included in the very helpful articles [How to provide your own in-app install experience](https://web.dev/customize-install/) and [Make it installable](https://web.dev/codelab-make-installable/) by **web.dev**.*
 
 ## License
     

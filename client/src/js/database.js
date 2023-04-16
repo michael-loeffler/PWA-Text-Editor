@@ -1,5 +1,6 @@
 import { openDB } from 'idb';
 
+// Establishes the IndexedDB database if one doesn't already exist
 const initdb = async () =>
   openDB('jate', 1, {
     upgrade(db) {
@@ -12,7 +13,7 @@ const initdb = async () =>
     },
   });
 
-// TODO: Add logic to a method that accepts some content and adds it to the database
+// PUT "route" that adds any new changes in Text Editor window to IndexedDB. This is done whenever the user clicks off the Text Editor window.
 export const putDb = async (content) => {
   const jateDB = await openDB('jate', 1);
   const tx = jateDB.transaction('jate', 'readwrite');
@@ -22,7 +23,7 @@ export const putDb = async (content) => {
   console.log('Data saved to the database!');
 }
 
-// TODO: Add logic for a method that gets all the content from the database
+// GET "route" that retrieves the data stored in IndexedDB to be display in the Text Editor when the page is loaded
 export const getDb = async () => {
   const jateDB = await openDB('jate', 1);
   const tx = jateDB.transaction('jate', 'readonly');
