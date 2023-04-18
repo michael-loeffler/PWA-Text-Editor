@@ -26,8 +26,3 @@ window.addEventListener('appinstalled', (event) => {
     butInstall.style.display = "none";
     window.deferredPrompt = null;
 });
-
-
-
-
-// **when is this fired? app automatically opens in a new window and closes browser tab-- is that an issue?**
